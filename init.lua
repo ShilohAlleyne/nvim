@@ -17,3 +17,10 @@ vim.g.clipboard = {
     },
     cache_enabled = 0,
 }
+
+-- bufferline setup
+vim.opt.laststatus = 0
+
+-- hand written functions
+package.loaded["showmarks"] = nil
+_G.toggle_marks = require("custom.showmarks").toggle_marks
