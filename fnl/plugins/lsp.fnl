@@ -13,14 +13,19 @@
             {:indent_style "space"
               :indent_size "4"}}}}}
 
+      :tinymist
+        {:cmd         ["tinymist"]
+         :filetypes   ["typst"]
+         :single_file true}
+
       :gleam
         {:settings
           {:Gleam
           {:format
             {:enable true
             :defaultConfig
-            {:indent_style "space"
-              :indent_size "4"}}}}}
+              {:indent_style "space"
+              :indent_size  "4"}}}}}
 
       :rust_analyzer
         {:filetypes ["rust"]
@@ -28,9 +33,18 @@
            {"rust-analyzer"
              {:imports
                {:granularity {:group "module"}
-                :prefix "self"}
-                :cargo {:buildScripts {:enable true}}
-                :procMacro {:enable true}}}}
+                :prefix      ["self"]
+                :cargo       {:buildScripts {:enable true}}
+                :procMacro   {:enable true}}}}}
+
+      :fsautocomplete
+        {:filetypes ["fsharp" "fsx"]
+        :cmd       ["fsautocomplete"]
+        :single_file true
+        :on_new_config
+          (fn [config root]
+            (tset config :cmd_cwd (vim.fn.fnamemodify root ":h"))
+            config)}
 
       :fennel_language_server
         {:filetypes ["fennel"]
@@ -46,4 +60,6 @@
           {:diagnostics {:globals ["vim"]}
             :workspace
             {:library (vim.api.nvim_list_runtime_paths)
-            :checkThirdParty false}}}}}}))
+            :checkThirdParty false}}}}}})
+
+  spec)

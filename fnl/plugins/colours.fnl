@@ -13,7 +13,7 @@
 ;;     -- :set background=light
 ;; end,
 
-
+; Techbase colourscheme
 (let [spec {}]
   ;; Plugin name
   (table.insert spec "mcauley-penney/techbase.nvim")
@@ -23,3 +23,19 @@
   (set spec.priority 1000)
   spec)
 
+
+; ;; Minimal Colour Scheme
+; (let [spec {}]
+;   (table.insert spec "kyza0d/xeno.nvim")
+;   (set spec.lazy false)
+;   (set spec.priority 1000)
+;   (set spec.config
+;        (fn []
+;          (let [xeno (require :xeno)]
+;            (xeno.new_theme 
+;              "Overdrive-III" 
+;              {:base   "#2b2b2b"
+;               :accent "#68429C"})
+;            (vim.cmd.colorscheme "Overdrive-III"))))
+;
+;   spec)
