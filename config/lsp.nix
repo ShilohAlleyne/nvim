@@ -1,16 +1,11 @@
 {
     plugins.lsp = {
-        enable            = true;
-        # inlayHints.enable = true;
+        enable     = true;
+        inlayHints = true;
         servers = {
-            # rust_analyzer = {
-            #     enable       = true;
-            #     installCargo = true;
-            #     installRustc = true;
-            # };
             hls = {
                 enable     = true;
-                installGhc = true;
+                installGhc = false;
             };
             pyright = {
                 enable   = true;

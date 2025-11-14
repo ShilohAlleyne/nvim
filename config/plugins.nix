@@ -22,16 +22,17 @@
         treesitter.enable      = true;
         rustaceanvim = {
             enable = true;
-            settings.default_settings = {
-                inlayHints = {
-                    enable = true;
-                    lifetimeElisionHints = {
-                        enable            = "always";
-                        useParameterNames = true;
+            settings = {
+                tools.enable_clippy = true;
+                server = {
+                    default_settings = {
+                        inlayHints.lifetimeElisionHints.enable = "always";
+                        rust-analyzer = {
+                            cargo = { allFeatures = true; };
+                            check = { command     = "clippy"; };
+                            files = { excludeDirs = ["target" ".git" ".cargo" ".github" ".direnv"]; };
+                        };
                     };
-                    typeHints.enable      = true;
-                    chainingHints.enable  = true;
-                    parameterHints.enable = true;
                 };
             };
         };
