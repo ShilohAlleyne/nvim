@@ -20,10 +20,19 @@
 
         # Programming
         treesitter.enable      = true;
-        rustaceanvim           = {
-            enable                    = true;
+        rustaceanvim = {
+            enable = true;
             settings.default_settings = {
-                inlayHints.lifetimeElisionHints.enable = "always";
+                inlayHints = {
+                    enable = true;
+                    lifetimeElisionHints = {
+                        enable            = "always";
+                        useParameterNames = true;
+                    };
+                    typeHints.enable      = true;
+                    chainingHints.enable  = true;
+                    parameterHints.enable = true;
+                };
             };
         };
         lazygit.enable         = true;
