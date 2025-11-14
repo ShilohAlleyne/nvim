@@ -8,7 +8,8 @@
         web-devicons.enable = true;
 
         # Programming
-        treesitter.enable = true;
+        treesitter.enable       = true;
+        luasnip.enable          = true;
         markdown-preview.enable = true;
         typst-preview.enable    = true;
         lazygit.enable          = true;

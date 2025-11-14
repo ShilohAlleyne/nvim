@@ -26,6 +26,18 @@
 			mode         = "n";
 			options.desc = "Move focus down";
 		}
+        {
+            key          = "<Leader>w-";
+            action       = ":split<CR>";
+            mode         = "n";
+            options.desc = "Split window horizontally";
+        }
+        {
+            key          = "<Leader>w|";
+            action       = ":vsplit<CR>";
+            mode         = "n";
+            options.desc = "Split window vertically";
+        }
 		# Activate plugins
 		{
             key          = "<Leader>ff";
