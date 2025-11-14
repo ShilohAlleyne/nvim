@@ -1,7 +1,33 @@
 {
     globals.mapleader = " ";
     keymaps = [
-        {
+		# Normal Mode
+		{
+			key          = "<C-Right>";
+			action       = "<c-w>l";
+			mode         = "n";
+			options.desc = "Move focus right";
+		}
+		{
+			key          = "<C-Left>";
+			action       = "<c-w>h";
+			mode         = "n";
+			options.desc = "Move focus left";
+		}
+		{
+			key          = "<C-Up>";
+			action       = "<c-w>k";
+			mode         = "n";
+			options.desc = "Move focus up";
+		}
+		{
+			key          = "<C-Down>";
+			action       = "<c-w>j";
+			mode         = "n";
+			options.desc = "Move focus down";
+		}
+		# Activate plugins
+		{
             key          = "<Leader>ff";
             action       = ":Pick files<CR>";
             mode         = "n";
@@ -49,6 +75,43 @@
             mode         = "n";
             options.desc = "Open Undotree";
         }
-
+		# Insert Mode
+		{
+			key          = "<C-z>";
+			action       = "<C-o>u";
+			mode         = "i";
+			options.desc = "Undo";
+		}
+		{
+			key          = "<C-r>";
+			action       = "<C-o><C-r>";
+			mode         = "i";
+			options.desc = "Redo";
+		}
+		# Visual Mode
+		{
+			key          = "<C-c>";
+			action       = "+y";
+			mode         = "v";
+			options.desc = "Copy";
+		}
+		{
+			key          = "<C-v>";
+			action       = "+p";
+			mode         = "v";
+			options.desc = "Paste";
+		}
+		{
+			key          = "<S-Tab>";
+			action       = "<gv";
+			mode         = "v";
+			options.desc = "Un-ident line";
+		}
+		{
+			key          = "<Tab>";
+			action       = ">gv";
+			mode         = "v";
+			options.desc = "Ident line";
+		}
     ];
 }
