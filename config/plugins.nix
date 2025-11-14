@@ -36,15 +36,17 @@
                 };
             };
         };
-        lazygit.enable         = true;
-        trouble.enable         = true;
-        undotree.enable        = true;
-        mini-basics.enable     = true;
-        mini-pairs.enable      = true;
-        mini-surround.enable   = true;
-        mini-align.enable      = true;
-        mini-comment.enable    = true;
-        mini-completion.enable = true;
+        markdown-preview.enable = true;
+        typst-preview.enable    = true;
+        lazygit.enable          = true;
+        trouble.enable          = true;
+        undotree.enable         = true;
+        mini-basics.enable      = true;
+        mini-pairs.enable       = true;
+        mini-surround.enable    = true;
+        mini-align.enable       = true;
+        mini-comment.enable     = true;
+        mini-completion.enable  = true;
 
         # File nav
         mini-pick.enable       = true;
