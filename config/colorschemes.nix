@@ -1,17 +1,16 @@
-{pkgs, ...}:{
-    # colorschemes = {
-    #     oxocarbon = {
-    #         enable   = true;
-    #         autoLoad = true;
-    #     };
-    # };
-    colorschemes.techbase = {
-        enable = true;
-        package = pkgs.vimPlugins.techbase-nvim;
-    };
+{pkgs, ...}:
+{
+    extraPlugins = [(pkgs.vimUtils.buildVimPlugin {
+        name = "techbase";
+        src  = pkgs.fetchFromGitHub {
+            owner = "mcauley-penney";
+            repo  = "techbase.nvim";
+            rev   = "master";
+            hash  = "sha256-59h1szBkKteKQdpPu0394pEDEORvLXLS6SsvIk6HM+o=";
+        };
+    })];
 
-    # Optional: Set as default colorscheme explicitly
-    # extraConfigLua = ''
-    #     vim.cmd.colorscheme("techbase")
-    # '';
+    extraConfigLua = ''
+        vim.cmd.colorscheme("techbase")
+    '';
 }

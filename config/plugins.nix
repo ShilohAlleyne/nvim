@@ -5,22 +5,11 @@
             enable          = true;
             settings.preset = "helix";
         };
-        web-devicons.enable    = true;
-        mini-icons.enable      = true;
-        mini-statusline.enable = true;
-        mini-trailspace.enable = true;
-        mini-starter.enable    = true;
-        mini-diff.enable       = true;
-        mini-tabline.enable    = true;
-        mini-notify.enable     = true;
-        mini-indentscope       = {
-            enable          = true;
-            settings.symbol = "│";
-        };
+        web-devicons.enable = true;
 
         # Programming
-        treesitter.enable      = true;
-        rustaceanvim = {
+        treesitter.enable = true;
+        rustaceanvim      = {
             enable = true;
             settings = {
                 tools.enable_clippy = true;
@@ -41,16 +30,33 @@
         lazygit.enable          = true;
         trouble.enable          = true;
         undotree.enable         = true;
-        mini-basics.enable      = true;
-        mini-pairs.enable       = true;
-        mini-surround.enable    = true;
-        mini-align.enable       = true;
-        mini-comment.enable     = true;
-        mini-completion.enable  = true;
 
         # File nav
-        mini-pick.enable       = true;
-        yazi.enable            = true;
-        oil.enable             = true;
+        yazi.enable = true;
+        oil.enable  = true;
+
+        # Mini
+        mini = {
+            enable = true;
+            modules = {
+                align       = {};
+                basics      = {};
+                comment     = {};
+                completion  = {};
+                diff        = {};
+                icons       = {};
+                indentscope = {
+                    symbol = "│";
+                };
+                notify      = {};
+                pairs       = {};
+                pick        = {};
+                starter     = {};
+                statusline  = {};
+                surround    = {};
+                tabline     = {};
+                trailspace  = {};
+            };
+        };
     };
 }
