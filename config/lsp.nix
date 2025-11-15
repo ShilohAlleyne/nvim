@@ -26,6 +26,10 @@
                     formatting.command = [ "nixpkgs-fmt" ];
                 };
             };
+            marksman.enable       = true;
+            tinymist.enable       = true;
+            fsautocomplete.enable = true;
+            gleam.enable          = true;
         };
     };
 }

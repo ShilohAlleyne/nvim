@@ -5,13 +5,22 @@
             enable          = true;
             settings.preset = "helix";
         };
-        web-devicons.enable = true;
+        render-markdown = {
+            enable           = true;
+            settings = {
+                heading = {
+                    border = false;
+                    sign   = false;
+                };
+            };
+        };
+        web-devicons.enable     = true;
+        markdown-preview.enable = true;
+        typst-preview.enable    = true;
 
         # Programming
         treesitter.enable       = true;
         luasnip.enable          = true;
-        markdown-preview.enable = true;
-        typst-preview.enable    = true;
         lazygit.enable          = true;
         trouble.enable          = true;
         undotree.enable         = true;

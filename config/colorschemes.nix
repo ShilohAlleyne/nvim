@@ -12,5 +12,8 @@
 
     extraConfigLua = ''
         vim.cmd.colorscheme("techbase")
+        vim.api.nvim_set_hl(0, "RenderMarkdownH1Bg", {
+            bg = "#1f3248",  -- Halfway between blue and teal (I guess)
+        })
     '';
 }
