@@ -38,6 +38,145 @@
             mode         = "n";
             options.desc = "Split window vertically";
         }
+        # Lsp actions
+        {
+            key          = "<leader>cl";
+            action       = ":LspInfo<CR>";
+            mode         = "n";
+            options.desc = "Lsp Info";
+        }
+        {
+            key          = "gd";
+            action       = ":lua vim.lsp.buf.definition()<CR>";
+            mode         = "n";
+            options.desc = "Goto Definition";
+        }
+        {
+            key          = "gr";
+            action       = ":lua vim.lsp.buf.references()<CR>";
+            mode         = "n";
+            options.desc = "References";
+        }
+        {
+            key          = "gI";
+            action       = ":lua vim.lsp.buf.implementation()<CR>";
+            mode         = "n";
+            options.desc = "Goto Implementation";
+        }
+        {
+            key          = "gy";
+            action       = ":lua vim.lsp.buf.type_definition()<CR>";
+            mode         = "n";
+            options.desc = "Goto Type Definition";
+        }
+        {
+            key          = "gD";
+            action       = ":lua vim.lsp.buf.declaration()<CR>";
+            mode         = "n";
+            options.desc = "Goto Declaration";
+        }
+        {
+            key          = "K";
+            action       = ":lua vim.lsp.buf.hover()<CR>";
+            mode         = "n";
+            options.desc = "Hover";
+        }
+        {
+            key          = "gK";
+            action       = ":lua vim.lsp.buf.signature_help()<CR>";
+            mode         = "n";
+            options.desc = "Signature Help";
+        }
+        {
+            key          = "<c-k>";
+            action       = ":lua vim.lsp.buf.signature_help()<CR>";
+            mode         = "i";
+            options.desc = "Signature Help";
+        }
+        {
+            key          = "<leader>ca";
+            action       = ":lua vim.lsp.buf.code_action()<CR>";
+            mode         = "n";
+            options.desc = "Code Action";
+        }
+        {
+            key          = "<leader>cc";
+            action       = ":lua vim.lsp.codelens.run()<CR>";
+            mode         = "n";
+            options.desc = "Run Codelens";
+        }
+        {
+            key          = "<leader>cC";
+            action       = ":lua vim.lsp.codelens.refresh()<CR>";
+            mode         = "n";
+            options.desc = "Refresh & Display Codelens";
+        }
+        {
+            key          = "<leader>cR";
+            action       = ":lua vim.lsp.util.rename()<CR>";
+            mode         = "n";
+            options.desc = "Rename File";
+        }
+        {
+            key          = "<leader>cr";
+            action       = ":lua vim.lsp.buf.rename()<CR>";
+            mode         = "n";
+            options.desc = "Rename";
+        }
+        {
+            key          = "<leader>cA";
+            action       = ":lua vim.lsp.buf.code_action({ context = { only = { 'source' }, diagnostics = {} } })<CR>";
+            mode         = "n";
+            options.desc = "Source Action";
+        }
+        {
+            key          = "]]";
+            action       = ":lua vim.diagnostic.goto_next({ float = false })<CR>";
+            mode         = "n";
+            options.desc = "Next Reference";
+        }
+        {
+            key          = "[[";
+            action       = ":lua vim.diagnostic.goto_prev({ float = false })<CR>";
+            mode         = "n";
+            options.desc = "Prev Reference";
+        }
+        {
+            key          = "<a-n>";
+            action       = ":lua vim.diagnostic.goto_next({ float = false })<CR>";
+            mode         = "n";
+            options.desc = "Next Reference";
+        }
+        {
+            key          = "<a-p>";
+            action       = ":lua vim.diagnostic.goto_prev({ float = false })<CR>";
+            mode         = "n";
+            options.desc = "Prev Reference";
+        }
+        {
+            key          = "<leader>ss";
+            action       = ":lua vim.lsp.buf.document_symbol()<CR>";
+            mode         = "n";
+            options.desc = "LSP Symbols";
+        }
+        {
+            key          = "<leader>sS";
+            action       = ":lua vim.lsp.buf.workspace_symbol()<CR>";
+            mode         = "n";
+            options.desc = "LSP Workspace Symbols";
+        }
+        {
+            key          = "gai";
+            action       = ":lua vim.lsp.buf.incoming_calls()<CR>";
+            mode         = "n";
+            options.desc = "Calls Incoming";
+        }
+        {
+            key          = "gao";
+            action       = ":lua vim.lsp.buf.outgoing_calls()<CR>";
+            mode         = "n";
+            options.desc = "Calls Outgoing";
+        }
 		# Activate plugins
 		{
             key          = "<Leader>ff";
@@ -86,6 +225,18 @@
             action       = ":UndotreeToggle<CR>";
             mode         = "n";
             options.desc = "Open Undotree";
+        }
+        {
+            key          = "<Leader>bd";
+            action       = "<Cmd>lua require('mini.bufremove').delete(0, false)<CR>";
+            mode         = "n";
+            options.desc = "Delete current buffer";
+        }
+        {
+            key          = "<Leader>bo";
+            action       = "<Cmd>lua local c=vim.api.nvim_get_current_buf(); for _,b in ipairs(vim.api.nvim_list_bufs()) do if b~=c and vim.api.nvim_buf_is_loaded(b) then require('mini.bufremove').delete(b, false) end end<CR>";
+            mode         = "n";
+            options.desc = "Delete all other buffers";
         }
 		# Insert Mode
 		{
