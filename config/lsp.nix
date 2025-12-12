@@ -3,10 +3,6 @@
         enable     = true;
         inlayHints = true;
         servers = {
-            hls = {
-                enable     = true;
-                installGhc = false;
-            };
             pyright = {
                 enable   = true;
                 settings = {
@@ -30,6 +26,18 @@
             tinymist.enable       = true;
             fsautocomplete.enable = true;
             gleam.enable          = true;
+            clangd.enable         = true;
         };
     };
+
+    extraConfigLua = ''
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = { "markdown", "typst" },
+          callback = function()
+            vim.opt_local.wrap = true       -- enable line wrapping
+            vim.opt_local.spell = true      -- enable spell checking
+          end,
+        })
+    '';
+
 }

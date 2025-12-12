@@ -5,18 +5,11 @@
             enable          = true;
             settings.preset = "helix";
         };
-        render-markdown = {
-            enable           = true;
-            settings = {
-                heading = {
-                    border = false;
-                    sign   = false;
-                };
-            };
-        };
+        markview.enable         = true;
         web-devicons.enable     = true;
         markdown-preview.enable = true;
         typst-preview.enable    = true;
+        orgmode.enable          = true;
 
         # Programming
         treesitter.enable       = true;
@@ -42,20 +35,28 @@
             };
         };
 
+        haskell-tools.enable = true;
+
         blink-cmp = {
             enable          = true;
-            settings.keymap = {
-                "<C-l>"     = ["snippet_forward"           "fallback"];
-                "<C-h>"     = ["snippet_backward"          "fallback"];
-                "<Up>"      = ["select_prev"               "fallback"];
-                "<Down>"    = ["select_next"               "fallback"];
-                "<S-Tab>"   = ["select_prev"               "fallback"];
-                "<Tab>"     = ["select_next"               "fallback"];
-                "<C-k>"     = ["scroll_documentation_up"   "fallback"];
-                "<C-j>"     = ["scroll_documentation_down" "fallback"];
-                "<C-space>" = ["show"                      "show_documentation" "hide_documentation"];
-                "<CR>"      = ["accept"                    "fallback"];
-                "<Esc>"     = ["hide"                      "fallback"];
+            settings = {
+                keymap = {
+                    "<C-l>"     = ["snippet_forward"           "fallback"];
+                    "<C-h>"     = ["snippet_backward"          "fallback"];
+                    "<Up>"      = ["select_prev"               "fallback"];
+                    "<Down>"    = ["select_next"               "fallback"];
+                    "<S-Tab>"   = ["select_prev"               "fallback"];
+                    "<Tab>"     = ["select_next"               "fallback"];
+                    "<C-k>"     = ["scroll_documentation_up"   "fallback"];
+                    "<C-j>"     = ["scroll_documentation_down" "fallback"];
+                    "<C-space>" = ["show"                      "show_documentation" "hide_documentation"];
+                    "<CR>"      = ["accept"                    "fallback"];
+                    "<Esc>"     = ["hide"                      "fallback"];
+                };
+                completion.documentation = {
+                    auto_show          = true;
+                    auto_show_delat_ms = 50;
+                };
             };
         };
 

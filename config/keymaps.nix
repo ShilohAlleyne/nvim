@@ -191,6 +191,12 @@
             options.desc = "Pick buffers";
         }
         {
+            key          = "<Leader>fg";
+            action       = ":Pick grep<CR>";
+            mode         = "n";
+            options.desc = "Pick grep";
+        }
+        {
             key          = "<Leader>-";
             action       = ":Yazi<CR>";
             mode         = "n";
