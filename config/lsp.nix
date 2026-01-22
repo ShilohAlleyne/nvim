@@ -3,6 +3,10 @@
         enable     = true;
         inlayHints = true;
         servers = {
+            hls = {
+                enable     = true;
+                installGhc = false;
+            };
             pyright = {
                 enable   = true;
                 settings = {

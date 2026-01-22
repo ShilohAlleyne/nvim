@@ -35,8 +35,6 @@
             };
         };
 
-        haskell-tools.enable = true;
-
         blink-cmp = {
             enable          = true;
             settings = {
