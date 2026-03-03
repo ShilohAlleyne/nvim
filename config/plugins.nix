@@ -12,11 +12,12 @@
         orgmode.enable          = true;
 
         # Programming
-        treesitter.enable       = true;
-        luasnip.enable          = true;
-        lazygit.enable          = true;
-        trouble.enable          = true;
-        undotree.enable         = true;
+        treesitter.enable = true;
+        luasnip.enable    = true;
+        lazygit.enable    = true;
+        trouble.enable    = true;
+        undotree.enable   = true;
+        lean.enable       = true;
         
         rustaceanvim = {
             enable = true;

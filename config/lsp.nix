@@ -3,10 +3,6 @@
         enable     = true;
         inlayHints = true;
         servers = {
-            hls = {
-                enable     = true;
-                installGhc = false;
-            };
             pyright = {
                 enable   = true;
                 settings = {
@@ -42,6 +38,10 @@
             vim.opt_local.spell = true      -- enable spell checking
           end,
         })
+
+        require('lspconfig').hls.setup {
+          cmd = { "haskell-language-server-wrapper", "--lsp" },
+        }
     '';
 
 }
