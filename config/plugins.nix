@@ -9,7 +9,6 @@
         web-devicons.enable     = true;
         markdown-preview.enable = true;
         typst-preview.enable    = true;
-        orgmode.enable          = true;
 
         # Programming
         treesitter.enable = true;
@@ -83,7 +82,6 @@
                 statusline  = {};
                 surround    = {};
                 tabline     = {};
-                trailspace  = {};
             };
         };
     };
