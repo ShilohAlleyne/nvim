@@ -31,6 +31,19 @@
     };
 
     extraConfigLua = ''
+        -- Only prepend ~/.elan/bin to PATH when inside a Lean project
+        vim.api.nvim_create_autocmd("BufEnter", {
+          callback = function()
+            local cwd = vim.fn.getcwd()
+            local lakefile_toml = cwd .. "/lakefile.toml"
+            local lakefile_lean = cwd .. "/lakefile.lean"
+
+            if vim.fn.filereadable(lakefile_toml) == 1 or vim.fn.filereadable(lakefile_lean) == 1 then
+              vim.env.PATH = vim.fn.expand("~/.elan/bin") .. ":" .. vim.env.PATH
+            end
+          end,
+        })
+
         vim.api.nvim_create_autocmd("FileType", {
           pattern = { "markdown", "typst" },
           callback = function()
