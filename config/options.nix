@@ -37,24 +37,17 @@
 				},
 				cache_enabled = 0,
 			}
-
-            -- Add header comment to buffer
-            local function header(text)
-              local ft = vim.bo.filetype
-
-              -- map filetypes to comment leaders
-              local comment = ({
-                rust    = "//",
-                nix     = "//",
-                haskell = "--",
-                python  = "#",
-              })[ft] or "//"   -- fallback
-
-              local line = comment .. " " .. "──────────────────────────────────────────────────────────────"
-              local mid  = comment .. " " .. text
-
-              return table.concat({ line, mid, line }, "\n")
-            end
-        '';
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                pattern = "*",
+                callback = function()
+                    -- Save the current cursor position
+                    local save_cursor = vim.fn.getpos(".")
+                    -- Execute the regex
+                    vim.cmd([[%s/\s\+$//e]])
+                    -- Restore the cursor position so it doesn't jump to the end
+                    vim.fn.setpos(".", save_cursor)
+                end,
+            })
+          '';
     };
 }
