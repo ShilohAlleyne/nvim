@@ -17,7 +17,7 @@
         trouble.enable    = true;
         undotree.enable   = true;
         lean.enable       = true;
-        
+
         rustaceanvim = {
             enable = true;
             settings = {
@@ -50,10 +50,6 @@
                     "<C-space>" = ["show"                      "show_documentation" "hide_documentation"];
                     "<CR>"      = ["accept"                    "fallback"];
                     "<Esc>"     = ["hide"                      "fallback"];
-                };
-                completion.documentation = {
-                    auto_show          = true;
-                    auto_show_delat_ms = 50;
                 };
             };
         };
